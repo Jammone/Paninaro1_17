@@ -1,0 +1,76 @@
+#                                                                #
+#        PANINARO: gestore delle regioni WorldGuards             #
+#                ad accesso e permessi limitati                  #
+#                                                                #
+##################################################################
+#                                                                #
+#                       UTILIZZO                                 #
+#                                                                #
+##################################################################
+# operators:                                                     #
+#   - <operatore1>                                               #
+#   - <operatore2>                                               #
+# regions:                                                       #
+#   - region_name:  <nome_WorldGuardRegion/BossArena>            #
+#        bossname:  <nome_boss_in_game>                          #
+#        maxnumplayers: <massimo_numero_players_insieme>         #
+#        respawn_time: [<ore>,<minuti>]                          #
+#        warp_coords: {world: <nome_mondo>, x: <coordinate_x>,   #
+#                     y: <coordinate_y>, z: <coordinate_z>,      #
+#                     pitch: <int>, yaw: <int>}                  #
+#        anticamera_name: <nome_WorldGuardRegion/Anticamera>     #
+#        kick_coords: {world: <nome_mondo>, x: <coordinate_x>,   #
+#                     y: <coordinate_y>, z: <coordinate_z>,      #
+#                     pitch: <int>, yaw: <int>}                  #
+#                                                                #
+##################################################################
+#                                                                #
+#                 Informazioni Utili                             #
+#                                                                #
+##################################################################
+# --> gli operatori sono i player che possono entrare e uscire   #
+#     liberamente da tutte le boss aree. Se vuoi dare un         #
+#     permesso temporaneo in una certa region puoi anche usare   #
+#     il comando                                                 #
+#           /paninaro localop <utente> <regione>                 #
+#     questi privilegi si rimuovono automaticamente ogni         #
+#     volta che il plugin o il server viene ricaricato           #
+#                                                                #
+# --> region_name e anticamera_name  devono assolutamente        #
+#            coincidere con il nome della regions su WorldGuard! #
+#                                                                #
+# --> <nome_boss> deve corrispondere al nome in game dell'entità #
+#           boss, se errato non si rileva la sua morte!          #
+#                                                                #
+# --> respawn_time deve essere settato su WorldGuard e           #
+#           copiato qui                                          #
+#                                                                #
+# --> kick_coords indica le coordinate dove i player             #
+#           nell'anticamera verranno teletrasportati se il boss  #
+#           inizia un combattimento                              #
+#                                                                #
+##################################################################
+operators:
+  - "Operatore1"
+  - "Operatore2"
+regions:
+  - boss_name: "IT"
+      boss_spawn_coords: { world: "world", x: -1104,y: 72, z: -231, yaw: 0, pitch: 0 }
+      warp_coords: { world: "world", x: -1104,y: 70, z: -147, yaw: 180, pitch: 0 }
+      join_coords: { world: "world", x: -1104,y: 70, z: -147, yaw: 180, pitch: 0 }
+      leave_coords: { world: "world", x: -1104,y: 70, z: -147, yaw: 180, pitch: 0 }
+      respawn_time: 60
+      join_npc_id: -1
+      leave_npc_id: -1
+      max_num_players: 1
+
+  - boss_name: "Casper"
+    boss_spawn_coords: { world: "world", x: -1104,y: 72, z: -231, yaw: 0, pitch: 0 }
+      warp_coords: { world: "world", x: -1104,y: 70, z: -147, yaw: 180, pitch: 0 }
+      join_coords: { world: "world", x: -1104,y: 70, z: -147, yaw: 180, pitch: 0 }
+      leave_coords: { world: "world", x: -1104,y: 70, z: -147, yaw: 180, pitch: 0 }
+      respawn_time: 60
+      join_npc_id: -1
+      leave_npc_id: -1
+      max_num_players: 1
+

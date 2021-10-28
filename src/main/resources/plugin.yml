@@ -1,0 +1,8 @@
+name: Paninaro1_17
+version: ${project.version}
+main: jammone.paninaro1_17.Paninaro1_17
+api-version: 1.17
+depend: [Citizens]
+commands:
+  boss:
+  paninaro:
